@@ -1,5 +1,10 @@
 ---
 
+- name: set fw provider
+  set_fact: 
+    fw_provider: "{{ fw_provider | combine( { 'username': fw_username, 
+      'password': fw_password, 'ip_address': fw_ip_address }) }}"
+
 - name: add rule to firewall
   panos_security_rule:
     provider: "{{ fw_provider }}" 

@@ -1,10 +1,10 @@
 ---
 # defaults file for firewall
 
-fw_provider: 
-  username: user
-  password: changme
-  ip_address: "127.0.0.1"
+fw_provider: {}
+fw_username: ANSIBLE_NET_USERNAME
+fw_password: ANSIBLE_NET_PASSWORD
+fw_ip_address: "127.0.0.1"
 
 fw_rule_name: rulename
 fw_rule_description: "rule description"
