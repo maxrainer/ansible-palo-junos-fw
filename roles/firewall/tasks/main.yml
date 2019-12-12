@@ -1,0 +1,6 @@
+---
+# tasks file for firewall
+
+- name: include rules
+  include_tasks: rule.yml
+

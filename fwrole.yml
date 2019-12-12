@@ -1,0 +1,9 @@
+
+- name: firewall role play
+  hosts: firewall
+  connection: local
+  gather_facts: False
+  roles:
+    - firewall
+  tags:
+    - role 

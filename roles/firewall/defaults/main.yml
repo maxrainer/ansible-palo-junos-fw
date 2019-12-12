@@ -1,0 +1,17 @@
+---
+# defaults file for firewall
+
+fw_provider: 
+  username: user
+  password: changme
+  ip_address: "127.0.0.1"
+
+fw_rule_name: rulename
+fw_rule_description: "rule description"
+fw_rule_src_zone: "inside"
+fw_rule_dest_zone: "outside"
+fw_rule_src_ip: "127.0.0.1"
+fw_rule_dest_ip: "127.0.0.1"
+fw_rule_service: service-https
+fw_rule_tag: tag
+fw_rule_action: allow
