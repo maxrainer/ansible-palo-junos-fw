@@ -1,5 +1,9 @@
 ---
 
+- name: debug hostvars
+  debug:
+    msg: "{{ hostvars }}"
+
 - name: set fw provider
   set_fact: 
     fw_provider: "{{ fw_provider | combine( { 'username': fw_username, 

@@ -2,8 +2,8 @@
 # defaults file for firewall
 
 fw_provider: {}
-fw_username: "{{ ANSIBLE_NET_USERNAME }}"
-fw_password: "{{ ANSIBLE_NET_PASSWORD }}"
+fw_username: "{{ ansible_user }}"
+fw_password: "{{ ansible_ssh_pass }}"
 fw_ip_address: "127.0.0.1"
 
 fw_rule_name: rulename
