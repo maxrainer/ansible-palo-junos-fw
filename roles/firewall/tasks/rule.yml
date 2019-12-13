@@ -10,7 +10,7 @@
   debug:
     msg: "{{ __backup_manager_provider }}"
 
-- debug: msg="{{ lookup('env','PANOS_PASSWORD') }}
+- debug: msg="{{ lookup('env','PANOS_PASSWORD') }}"
 
 - name: debug hostvars
   debug:
