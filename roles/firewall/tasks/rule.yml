@@ -1,17 +1,18 @@
 ---
 
-- name: debug hostvars
-  debug:
-    msg: "{{ hostvars }}"
-
 - name: set fw provider
   set_fact: 
-    fw_provider: "{{ fw_provider | combine( { 'username': fw_username, 
-      'password': fw_password, 'ip_address': fw_ip_address }) }}"
+   __backup_manager_provider: "{{ __backup_manager_provider | 
+        combine( { 'username': panos_username, 
+        'password': panos_password, 'ip_address': ansible_host }) }}"
+
+- name: debug hostvars
+  debug:
+    msg: "{{ __backup_manager_provider }}"
 
 - name: add rule to firewall
   panos_security_rule:
-    provider: "{{ fw_provider }}" 
+    provider: "{{ __backup_manager_provider }}"
     rule_name: "{{ fw_rule_name }}"
     description: "{{ fw_rule_description }}"
     source_zone: ["{{ fw_rule_src_zone }}"]
