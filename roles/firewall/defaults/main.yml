@@ -2,9 +2,8 @@
 # defaults file for firewall
 
 fw_provider: {}
-fw_username: "{{ ansible_user }}"
-fw_password: "{{ ansible_ssh_pass }}"
-fw_ip_address: "127.0.0.1"
+panos_username: "user"
+panos_password: "changeme"
 
 fw_rule_name: rulename
 fw_rule_description: "rule description"
