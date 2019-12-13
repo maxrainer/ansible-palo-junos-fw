@@ -6,9 +6,13 @@
         combine( { 'username': panos_username, 
         'password': panos_password, 'ip_address': ansible_host }) }}"
 
-- name: debug hostvars
+- name: debug provider
   debug:
     msg: "{{ __backup_manager_provider }}"
+
+- name: debug hostvars
+  debug:
+    msg: "{{ hostvars }}"
 
 - name: add rule to firewall
   panos_security_rule:
