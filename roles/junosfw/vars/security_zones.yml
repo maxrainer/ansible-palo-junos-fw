@@ -1,0 +1,10 @@
+security_zones:
+  - name: "{{ src_zone }}"
+    address_books:
+      - name: "{{ src_hostname }}"
+        ipv4: "{{ src_ip_address }}/32"
+
+  - name: outside
+    address_books:
+      - name: "{{ dest_hostname }}"
+        ipv4: "{{ dest_ip_address }}/32"

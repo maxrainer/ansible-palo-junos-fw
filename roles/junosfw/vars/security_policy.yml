@@ -1,0 +1,18 @@
+
+security_policy:
+  name: "{{ src_hostname }} - {{ dest_hostname }}"
+  from: "{{ src_zone }}"
+  to: "{{ dest_zone }}"
+  source_addresses:
+    - name: "{{ src_ip_address }}"
+  destination_addresses:
+    - name: "{{ dest_ip_address }}"
+  applications:
+    - name: junos-ping
+    - name: junos-dns-udp
+    - name: junos-http
+    - name: junos-https
+  actions:
+    - name: permit
+    - name: log session-init
+  

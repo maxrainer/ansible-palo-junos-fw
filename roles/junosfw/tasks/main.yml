@@ -1,5 +1,13 @@
 ---
 
+- include_vars: 
+    file: security_policy.yml
+  when: survey
+
+- include_vars: 
+    file: security_zones.yml
+  when: survey
+
 - include_tasks: security_zones.yml
 
 - include_tasks: security_policy.yml
