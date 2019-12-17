@@ -4,17 +4,18 @@
 
 - name: security_policy.source_address
   include_tasks: security_policy.source_addresses.yml
-  when: security_policy.source_addresses is defined
 
 - name: security_policy.destination_addresses
   include_tasks: security_policy.destination_addresses.yml
-  when: security_policy.destination_addresses is defined
-
+  
 - name: security_policy.applications
   include_tasks: security_policy.applications.yml
 
 - name: security_policy.actions
   include_tasks: security_policy.actions.yml
+
+- debug: 
+    msg: "{{ security_policy_config }}"
 
 - name: "security_policy: Push configuration"
   junos_config:

@@ -1,5 +1,7 @@
 ---
 
+- include_tasks: security_zones.yml
+
 - include_tasks: security_policy.yml
  # when: security_policy is defined
   
