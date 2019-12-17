@@ -1,9 +1,8 @@
 - name: "security_policies.applications: Ensure state of match"
-  juniper_junos_config:
-    check: false
-    commit: false
-    lines:
-      - set security policies from-zone {{ security_policy.from }} to-zone {{ security_policy.to }} policy {{ security_policy.name }} match application {{ application.name }}
+  vars:
+    junos_config: set security policies from-zone {{ security_policy.from }} to-zone {{ security_policy.to }} policy {{ security_policy.name }} match application {{ application.name }}
+  set_fact:
+    security_policy_config: "{{ security_policy_config }} + [ '{{ junos_config }}' ]"
   loop: "{{ security_policy.applications }}"
   loop_control:
     loop_var: application
