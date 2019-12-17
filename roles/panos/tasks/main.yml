@@ -1,6 +1,9 @@
 ---
 # tasks file for firewall
 
+- include_vars: policy.yml
+  when: survey
+
 - name: include rules
   include_tasks: rule.yml
 
