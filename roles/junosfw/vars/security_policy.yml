@@ -1,6 +1,6 @@
 
 security_policy:
-  name: "{{ src_hostname }} - {{ dest_hostname }}"
+  name: "{{ src_hostname }}_{{ dest_hostname }}"
   from: "{{ src_zone }}"
   to: "{{ dest_zone }}"
   source_addresses:
