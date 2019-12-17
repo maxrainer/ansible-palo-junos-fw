@@ -14,9 +14,6 @@
 - name: security_policy.actions
   include_tasks: security_policy.actions.yml
 
-#- debug: 
-#    msg: "{{ security_policy_config }}"
-
 - name: "security_policy: Push configuration"
   junos_config:
     lines: "{{ security_policy_config }}"

@@ -9,5 +9,5 @@ security_policy:
   destination_addresses:
     - name: "{{ dest_hostname }}"
   applications: "{{ applications }}"
-  actions: "{{ actions }}"
+  actions: "{{ fw_action }}"
   

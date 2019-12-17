@@ -3,7 +3,6 @@
 - name: survey input parsing
   set_fact:
     applications: "{{ dest_applications.split('\n') }}"
-    actions: "{{ fw_actions.split('\n') }}"
   when: survey
 
 - include_vars: 
