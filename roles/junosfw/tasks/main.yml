@@ -1,5 +1,11 @@
 ---
 
+- name: survey input parsing
+  set_fact:
+    applications: "{{ dest_applications.split('\n') }}"
+    actions: "{{ fw_actions.split('\n') }}"
+  when: survey
+
 - include_vars: 
     file: security_policy.yml
   when: survey
@@ -8,8 +14,17 @@
     file: security_zones.yml
   when: survey
 
+- name: debug security policy
+  debug: 
+     msg: "{{ security_policy }}"
+  tags: debug
+
+- name: debug security zones
+  debug: 
+     msg: "{{ security_zones }}"
+  tags: debug
+
 - include_tasks: security_zones.yml
 
 - include_tasks: security_policy.yml
- # when: security_policy is defined
   

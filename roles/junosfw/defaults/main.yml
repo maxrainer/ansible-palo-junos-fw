@@ -1,5 +1,20 @@
 ---
 
-survey: False
+dest_applications: asd
+dest_hostname: aws-dns
+dest_ip_address: 3.4.5.5
+dest_zone: outside
+fw_actions: |-
+  permit
+  log session-init
+src_hostname: windows17
+src_ip_address: 2.3.4.5
+src_zone: inside
+survey: true
+
+
+#survey: False
 security_policy: {}
 security_zones: []
+
+applications: []
