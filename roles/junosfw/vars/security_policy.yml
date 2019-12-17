@@ -4,9 +4,9 @@ security_policy:
   from: "{{ src_zone }}"
   to: "{{ dest_zone }}"
   source_addresses:
-    - name: "{{ src_ip_address }}"
+    - name: "{{ src_hostname }}"
   destination_addresses:
-    - name: "{{ dest_ip_address }}"
+    - name: "{{ dest_hostname }}"
   applications:
     - name: junos-ping
     - name: junos-dns-udp
