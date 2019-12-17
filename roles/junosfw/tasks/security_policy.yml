@@ -4,10 +4,11 @@
 
 - name: security_policy.source_address
   include_tasks: security_policy.source_addresses.yml
+  when: security_policy.source_addresses is defined
 
 - name: security_policy.destination_addresses
   include_tasks: security_policy.destination_addresses.yml
-  when: defined security_policy.destination_addresses
+  when: security_policy.destination_addresses is defined
 
 - name: security_policy.applications
   include_tasks: security_policy.applications.yml
