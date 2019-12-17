@@ -1,6 +1,10 @@
 ---
 # tasks file for firewall
 
+# - name: change facts for palo
+#   set_fact: 
+#     action_cache: "{% if action == 'permit' %} 'allow' {% else %} 'deny' {% endif %}"
+
 - include_vars: policy.yml
   when: survey
 
