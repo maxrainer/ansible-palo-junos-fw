@@ -5,7 +5,7 @@
 #  loop_control:
 #    loop_var: interface
 
-- name: "security_zone.address_book {{ security_zone.name }}"
+- name: "security_zone.address_book {{ security_zone }}"
   include_tasks: security_zone.address_book.yml
   loop: "{{ security_zone.address_books }}"
   loop_control:

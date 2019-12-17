@@ -1,6 +1,8 @@
 ---
 
-dest_applications: asd
+dest_applications: |-
+  junos-http
+  junos-https
 dest_hostname: aws-dns
 dest_ip_address: 3.4.5.5
 dest_zone: outside
@@ -13,8 +15,8 @@ src_zone: inside
 survey: true
 
 
-#survey: False
 security_policy: {}
 security_zones: []
 
 applications: []
+zones: []
