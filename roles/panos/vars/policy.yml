@@ -5,6 +5,8 @@ fw_rule_src_zone: "{{ src_zone }}"
 fw_rule_dest_zone: "{{ dest_zone }}"
 fw_rule_src_ip: "{{ src_ip_address }}"
 fw_rule_dest_ip: "{{ dest_ip_address }}"
+fw_rule_dest_hostname: "{{ dest_hostname }}"
+fw_rule_src_hostname: "{{ src_hostname }}"
 fw_rule_service: 
   - service-https
   - service-http

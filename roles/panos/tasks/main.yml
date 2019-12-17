@@ -1,9 +1,11 @@
 ---
 # tasks file for firewall
 
-
 - include_vars: policy.yml
   when: survey
+
+- name: include address object
+  include_tasks: address_object.yml
 
 - name: include rules
   include_tasks: rule.yml
