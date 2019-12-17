@@ -3,6 +3,6 @@
     junos_config: set security policies from-zone {{ security_policy.from }} to-zone {{ security_policy.to }} policy {{ security_policy.name }} then {{ actions }}
   set_fact:
     security_policy_config: "{{ security_policy_config }} + [ '{{ junos_config }}' ]"
-#  loop: "{{ security_policy.actions }}"
-#  loop_control:
-#    loop_var: action
+  loop: "{{ security_policy.actions }}"
+  loop_control:
+    loop_var: action
