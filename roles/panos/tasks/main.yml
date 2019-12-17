@@ -1,6 +1,12 @@
 ---
 # tasks file for firewall
 
+- name: set fw provider
+  set_fact: 
+   __backup_manager_provider: "{{ __backup_manager_provider | 
+        combine( { 'username': panos_username, 
+        'password': panos_password, 'ip_address': ansible_host }) }}"
+
 - include_vars: policy.yml
   when: survey
 
@@ -9,4 +15,3 @@
 
 - name: include rules
   include_tasks: rule.yml
-

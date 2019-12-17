@@ -1,11 +1,5 @@
 ---
 
-- name: set fw provider
-  set_fact: 
-   __backup_manager_provider: "{{ __backup_manager_provider | 
-        combine( { 'username': panos_username, 
-        'password': panos_password, 'ip_address': ansible_host }) }}"
-
 - name: add rule to firewall
   panos_security_rule:
     provider: "{{ __backup_manager_provider }}"
@@ -13,9 +7,9 @@
     description: "{{ fw_rule_description }}"
     source_zone: ["{{ fw_rule_src_zone }}"]
     destination_zone: ["{{ fw_rule_dest_zone }}"]
-    source_ip: ["{{ fw_rule_src_ip }}"]
+    source_ip: ["{{ fw_rule_src_hostname }}"]
     source_user: ['any']
-    destination_ip: ["{{ fw_rule_dest_ip }}"]
+    destination_ip: ["{{ fw_rule_dest_hostname }}"]
     category: ['any']
     application: ['any']
     service: "{{ fw_rule_service }}"
