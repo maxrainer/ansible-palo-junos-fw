@@ -1,9 +1,9 @@
 
-- name: firewall role play
+- name: Palo Alto Firewall 
   hosts: firewall
   connection: local
   gather_facts: False
   roles:
-    - firewall
+    - panos
   tags:
     - role 

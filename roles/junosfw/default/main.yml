@@ -1,0 +1,17 @@
+---
+
+security_policy:
+  name: inside_outside
+  from: inside
+  to: outside
+  source_addresses:
+    - name: host01-linux
+    - name: host01-windows
+  applications:
+    - name: junos-ping
+    - name: junos-dns
+    - name: junos-http
+    - name: junos-https
+  actions:
+    - name: permit
+    - name: log session-init
