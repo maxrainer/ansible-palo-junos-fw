@@ -1,5 +1,5 @@
 ---
-# tasks file for firewall
+# tasks file for firewall panos
 
 - name: skip panos if inside servers only
   meta: end_play

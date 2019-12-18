@@ -1,13 +1,13 @@
 ---
 
-fw_rule_dmz: "{{ True if src_zone == 'dmz' or dest_zone == 'dmz' }}"
+fw_rule_dmz: "{{ True if src_zone == 'dmz' or dest_zone == 'dmz' else False }}"
 
 fw_rule_name: "{{ src_hostname }}_{{ dest_hostname }}"
 fw_rule_description: "ansible created rule {{ src_hostname }} to {{ dest_hostname }}"
 fw_rule_src_zone: 
   "{% if fw_rule_dmz and src_zone == 'inside' %}outside{%elif fw_rule_dmz and src_zone == 'dmz' %}inside{% else %}{{ src_zone }}{% endif %}"
 fw_rule_dest_zone: 
-  "{% if fw_rule_dmz and dest_zone == 'dmz' %}inside{%elif fw_rule_dmz and src_zone == 'inside' %}outside{% else %}{{ src_zone }}{% endif %}"
+  "{% if fw_rule_dmz and dest_zone == 'dmz' %}inside{%elif fw_rule_dmz and src_zone == 'inside' %}outside{% else %}{{ dest_zone }}{% endif %}"
 fw_rule_src_ip: "{{ src_ip_address }}"
 fw_rule_dest_ip: "{{ dest_ip_address }}"
 fw_rule_dest_hostname: "{{ dest_hostname }}"
