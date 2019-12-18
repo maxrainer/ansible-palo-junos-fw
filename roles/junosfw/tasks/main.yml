@@ -1,12 +1,11 @@
 ---
 
+- name: skip junos play if dmz only
+  meta: end_play
+  when: (src_zone == 'dmz' and dest_zone == 'outside') or (dest_zone == 'dmz' and src_zone == 'outside')
+
 - include_tasks: application_mapping.yml
   when: survey
-
-# - name: survey input parsing
-#   set_fact:
-#     applications: "{{ dest_applications.split('\n') }}"
-#   when: survey
 
 - include_vars: 
     file: security_policy.yml

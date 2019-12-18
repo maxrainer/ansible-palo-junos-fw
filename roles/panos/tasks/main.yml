@@ -1,6 +1,10 @@
 ---
 # tasks file for firewall
 
+- name: skip panos if inside servers only
+  meta: end_play
+  when: (src_zone == 'inside' and dest_zone == 'outside') or (dest_zone == 'inside' and src_zone == 'outside')
+
 - name: set fw provider
   set_fact: 
    __backup_manager_provider: "{{ __backup_manager_provider | 
