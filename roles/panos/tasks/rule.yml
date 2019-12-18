@@ -14,7 +14,6 @@
     application: ['any']
     service: "{{ fw_rule_service }}"
     hip_profiles: ['any']
-    state: "{{ fw_rule_state }}"
+#    state: "{{ fw_rule_state }}"
     action: "{{ fw_rule_action }}"
-    commit: 'False'
-    #    tag_name: "{{ fw_rule_tag }}"
+    commit: 'True'
