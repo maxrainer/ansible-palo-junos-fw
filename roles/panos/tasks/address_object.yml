@@ -9,12 +9,12 @@
   panos_address_object:
     provider: "{{ __backup_manager_provider }}"
     name: "{{ fw_rule_src_hostname }}"
-    value: "{{ fw_rule_src_ip }}"
+    value: "{{ fw_rule_src_ip }}/32"
     commit: "False"
 
 - name: "create dest object {{ fw_rule_dest_hostname }}"
   panos_address_object:
     provider: "{{ __backup_manager_provider }}"
     name: "{{ fw_rule_dest_hostname }}"
-    value: "{{ fw_rule_dest_ip }}"
+    value: "{{ fw_rule_dest_ip }}/32"
     commit: "False"
