@@ -1,0 +1,19 @@
+
+
+
+- name: Juniper Firewall Play
+  hosts: junos
+  connection: netconf
+  gather_facts: False
+  roles:
+    - junosfw
+  when: not (src_zone == dmz and dest_zone == outside) or (dest_zone = dmz and src_zone = outside)
+
+- name: Palo Alto Firewall 
+  hosts: panos
+  connection: local
+  gather_facts: False
+  roles:
+    - panos
+  when: src_zone == dmz or dest_zone == dmz
+

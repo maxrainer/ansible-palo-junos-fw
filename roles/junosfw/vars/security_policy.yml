@@ -2,8 +2,8 @@
 
 security_policy:
   name: "{{ src_hostname }}_{{ dest_hostname }}"
-  from: "{{ src_zone }}"
-  to: "{{ dest_zone }}"
+  from: "{{ 'outside' if src_zone == 'dmz' else src_zone }}"
+  to: "{{ 'outside' if dest_zone == 'dmz' else dest_zone }}"
   source_addresses:
     - name: "{{ src_hostname }}"
   destination_addresses:

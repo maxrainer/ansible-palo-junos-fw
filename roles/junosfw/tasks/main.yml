@@ -1,9 +1,12 @@
 ---
 
-- name: survey input parsing
-  set_fact:
-    applications: "{{ dest_applications.split('\n') }}"
+- include_tasks: application_mapping.yml
   when: survey
+
+# - name: survey input parsing
+#   set_fact:
+#     applications: "{{ dest_applications.split('\n') }}"
+#   when: survey
 
 - include_vars: 
     file: security_policy.yml

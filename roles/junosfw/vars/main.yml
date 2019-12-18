@@ -1,0 +1,8 @@
+---
+
+__appmatch:
+  http: junos-http
+  https: junos-https
+  dns-udp: junos-dns-udp
+  dns-tcp: junos-dns-tcp
+  icmp: junos-icmp
