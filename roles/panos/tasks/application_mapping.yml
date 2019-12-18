@@ -10,6 +10,7 @@
   set_fact:
     applications: "{{ applications + [__appmatch[item]] }}"
   loop: "{{ app_cache }}"
+  when: survey and both
 
 - name: apps
   debug:

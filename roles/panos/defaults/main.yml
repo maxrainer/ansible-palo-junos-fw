@@ -6,6 +6,7 @@ applications: []
 panos_username: "user"
 panos_password: "changeme"
 survey: False
+both: False
 
 fw_rule_name: rulename
 fw_rule_description: "rule description"

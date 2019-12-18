@@ -11,6 +11,7 @@ src_hostname: windows17
 src_ip_address: 2.3.4.5
 src_zone: inside
 survey: true
+both: False
 
 
 security_policy: {}
