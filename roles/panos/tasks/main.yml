@@ -3,7 +3,7 @@
 
 - name: skip panos if inside servers only
   meta: end_play
-  when: (src_zone == 'inside' and dest_zone == 'outside') or (dest_zone == 'inside' and src_zone == 'outside')
+  when: both and (src_zone == 'inside' and dest_zone == 'outside') or (dest_zone == 'inside' and src_zone == 'outside')
 
 - name: set fw provider
   set_fact: 
