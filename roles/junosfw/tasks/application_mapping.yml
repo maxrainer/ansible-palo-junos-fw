@@ -2,7 +2,8 @@
 
 - name: application input splitting to list
   set_fact:
-    app_cache: "{{ dest_applications.split('\n') }}"
+    app_cache: "{% if dest_applications is iterable and dest_applications is not string %}{{dest_applications}}
+      {% else %}{{ dest_applications.split('\n') }}{% endif %}"
   when: survey
 
 - name: match applications to junos format
