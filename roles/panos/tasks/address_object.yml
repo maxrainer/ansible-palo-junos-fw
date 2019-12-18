@@ -11,6 +11,7 @@
     name: "{{ fw_rule_src_hostname }}"
     value: "{{ fw_rule_src_ip }}/32"
     commit: "False"
+  notify: commit
 
 - name: "create dest object {{ fw_rule_dest_hostname }}"
   panos_address_object:
@@ -18,3 +19,4 @@
     name: "{{ fw_rule_dest_hostname }}"
     value: "{{ fw_rule_dest_ip }}/32"
     commit: "False"
+  notify: commit

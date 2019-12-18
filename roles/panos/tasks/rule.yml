@@ -16,3 +16,4 @@
     hip_profiles: ['any']
     action: "{{ fw_rule_action }}"
     commit: 'False'
+  notify: commit
