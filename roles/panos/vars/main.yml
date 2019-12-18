@@ -14,4 +14,4 @@ __appmatch:
   https: service-https
   dns-udp: service-dns-udp
   dns-tcp: service-dns-tcp
-  icmp: service-icmp
+  rpc: active-directory
