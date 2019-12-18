@@ -5,5 +5,3 @@
   gather_facts: False
   roles:
     - panos
-  tags:
-    - role 
