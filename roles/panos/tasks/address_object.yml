@@ -1,5 +1,9 @@
 ---
 
+- name: provider
+  debug:
+    msg: "{{ __backup_manager_provider }}"
+
 - name: "create src object {{ fw_rule_src_hostname }}"
   panos_address_object:
     provider: "{{ __backup_manager_provider }}"
