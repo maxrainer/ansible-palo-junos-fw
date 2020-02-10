@@ -17,9 +17,6 @@
 - include_vars: policy.yml
   when: survey
 
-- debug: 
-    msg: "{{ fw_rule_src_zone }}" 
-
 - name: include address object
   include_tasks: address_object.yml
 
